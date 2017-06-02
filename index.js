@@ -3,6 +3,7 @@
 'use strict';
 
 const exit = require('exit');
+const path = require('path');
 const yargs = require('yargs');
 
 const Runner = require('./lib/Runner');
@@ -25,7 +26,7 @@ function main() {
 
   const runnerOptions = {
     functionName: argv.lambda,
-    payload: require(argv.payload), // eslint-disable-line global-require, import/no-dynamic-require
+    payload: require(path.resolve(argv.payload)), // eslint-disable-line global-require, import/no-dynamic-require
     region: argv.region,
     steps: String(argv.steps).split(',').map(Number),
     repeats: Number(argv.repeats)
