@@ -1,6 +1,6 @@
 {
   "name": "lambda-shearer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node CLI tool that helps to configure AWS Lambda function resources properly",
   "engines": {
     "node": ">=6.0.0"
