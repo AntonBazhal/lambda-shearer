@@ -1,6 +1,6 @@
 {
   "name": "lambda-shearer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node CLI tool that helps to configure AWS Lambda function resources properly",
   "engines": {
     "node": ">=6.0.0"
@@ -17,6 +17,9 @@
     "cost"
   ],
   "main": "index.js",
+  "bin": {
+    "lambda-shearer": "index.js"
+  },
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint"
