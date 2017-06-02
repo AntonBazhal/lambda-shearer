@@ -1,0 +1,32 @@
+root: true
+
+env:
+    node: true
+    es6: true
+
+extends:
+    - "eslint:recommended"
+    - "airbnb-base"
+
+parserOptions:
+    sourceType: "scripts"
+
+rules:
+    arrow-body-style: 0
+    arrow-parens: [2, "as-needed"]
+    comma-dangle: 0
+    class-methods-use-this: 0
+    func-names: 0
+    indent: [2, 2, { "SwitchCase": 1 }]
+    newline-per-chained-call: 0
+    no-console: 0
+    no-confusing-arrow: 0
+    no-plusplus: 0
+    no-restricted-syntax: 0
+    no-underscore-dangle: 0
+    no-unused-expressions: [2, { "allowTernary": true }]
+    max-len: [2, 120, { "ignoreTrailingComments": true, "ignoreStrings": true }]
+    padded-blocks: 0
+    prefer-rest-params: 0
+    prefer-spread: 0
+    space-before-function-paren: 0

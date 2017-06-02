@@ -1,0 +1,41 @@
+{
+  "name": "lambda-shearer",
+  "version": "1.0.0",
+  "description": "Node CLI tool that helps to configure AWS Lambda function resources properly",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntonBazhal/lambda-shearer.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "memory",
+    "performance",
+    "cost"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm prune",
+    "lint": "eslint .",
+    "test": "npm run lint"
+  },
+  "author": {
+    "name": "Anton Bazhal",
+    "email": "am.bazhal@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.60.0",
+    "bluebird": "^3.5.0",
+    "exit": "^0.1.2",
+    "yargs": "^8.0.1"
+  }
+}
