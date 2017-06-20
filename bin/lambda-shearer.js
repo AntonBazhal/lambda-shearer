@@ -14,6 +14,7 @@ const argv = yargs
   .describe('lambda', 'lambda function name or ARN')
   .describe('payload', 'path to a file that contains JSON payload or function that produces one (is invoked with one argument: index)')
   .describe('region', 'AWS region')
+  .describe('max-sockets', 'number of sockets to use in HTTPS connection pool')
   .describe('repeats', 'number of lambda function invocations for each memory setting')
   .describe('concurrency', 'number of concurrent invocations to use')
   .describe('delay', 'delay before each invoke')
@@ -24,12 +25,14 @@ const argv = yargs
   .alias('lambda', 'l')
   .alias('payload', 'p')
   .alias('region', 'r')
+  .alias('max-sockets', 'm')
   .alias('concurrency', 'c')
   .alias('delay', 'd')
   .alias('repeats', 'n')
   .alias('steps', 's')
   .alias('verbose', 'v')
   .alias('warmup', 'w')
+  .default('max-sockets', Runner.MAX_SOCKETS)
   .default('repeats', 10)
   .default('verbose', false)
   .default('warmup', true)
@@ -46,7 +49,8 @@ const runnerOptions = {
   concurrency: Number(argv.concurrency),
   delay: Number(argv.delay),
   verbose: Boolean(argv.verbose),
-  warmup: Boolean(argv.warmup)
+  warmup: Boolean(argv.warmup),
+  maxSockets: Number(argv.maxSockets)
 };
 
 const runner = new Runner(runnerOptions);
