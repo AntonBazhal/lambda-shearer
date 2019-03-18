@@ -1,9 +1,9 @@
 {
   "name": "lambda-shearer",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Node CLI tool that helps to configure AWS Lambda function resources properly",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.10.0"
   },
   "repository": {
     "type": "git",
@@ -28,18 +28,25 @@
     "name": "Anton Bazhal",
     "email": "am.bazhal@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Doug Moscrop",
+      "email": "doug.moscrop@gmail.com",
+      "url": "https://www.github.com/dougmoscrop"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.3.0"
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   },
   "dependencies": {
-    "aws-sdk": "^2.60.0",
-    "bluebird": "^3.5.0",
+    "aws-sdk": "^2.423.0",
+    "bluebird": "^3.5.3",
     "exit": "^0.1.2",
     "percentile": "^1.2.0",
     "progress": "^2.0.0",
-    "yargs": "^8.0.1"
+    "yargs": "^13.2.2"
   }
 }
