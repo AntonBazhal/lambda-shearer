@@ -6,7 +6,7 @@ This way, it is easier to make a decision about optimal configuration based on n
 
 ## Usage
 
-Requires Node 6.x or higher. AWS credentials [must be preconfigured][credentials-url] before use.
+Requires Node 8.10 or higher. AWS credentials [must be preconfigured][credentials-url] before use.
 
 ```bash
 npm install -g lambda-shearer
@@ -29,6 +29,8 @@ Options:
   --steps, -s        comma-separated list of memory settings, in MB, for your
                      lambda function to be tested with                [required]
   --warmup, -w       perform warmup call before actual benchmark [default: true]
+  --timer, -t        method to use for measuring duration
+                           [choices: "execution", "wall"] [default: "execution"]
 ```
 
 Example:
@@ -90,7 +92,7 @@ Contributors and PRs are always welcome.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Anton Bazhal
+Copyright (c) 2017-2019 Anton Bazhal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

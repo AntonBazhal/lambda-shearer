@@ -10,7 +10,7 @@ const yargs = require('yargs');
 const print = require('../lib/print');
 const Runner = require('../lib/Runner');
 
-const argv = yargs
+const { argv } = yargs
   .describe('lambda', 'lambda function name or ARN')
   .describe('payload', 'path to a file that contains JSON payload or function that produces one (is invoked with one argument: index)')
   .describe('region', 'AWS region')
@@ -41,8 +41,7 @@ const argv = yargs
   .default('warmup', true)
   .default('delay', 0)
   .default('concurrency', 1)
-  .default('timer', 'execution')
-  .argv;
+  .default('timer', 'execution');
 
 const runnerOptions = {
   functionName: argv.lambda,
