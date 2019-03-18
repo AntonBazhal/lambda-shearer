@@ -21,6 +21,8 @@ const argv = yargs
   .describe('verbose', 'print verbose output')
   .describe('steps', 'comma-separated list of memory settings, in MB, for your lambda function to be tested with')
   .describe('warmup', 'perform warmup call before actual benchmark')
+  .describe('timer', 'method to use for measuring duration')
+  .choices('timer', ['execution', 'wall'])
   .demand(['lambda', 'payload', 'steps'])
   .alias('lambda', 'l')
   .alias('payload', 'p')
@@ -32,12 +34,14 @@ const argv = yargs
   .alias('steps', 's')
   .alias('verbose', 'v')
   .alias('warmup', 'w')
+  .alias('timer', 't')
   .default('max-sockets', Runner.MAX_SOCKETS)
   .default('repeats', 10)
   .default('verbose', false)
   .default('warmup', true)
   .default('delay', 0)
   .default('concurrency', 1)
+  .default('timer', 'execution')
   .argv;
 
 const runnerOptions = {
@@ -50,7 +54,8 @@ const runnerOptions = {
   delay: Number(argv.delay),
   verbose: Boolean(argv.verbose),
   warmup: Boolean(argv.warmup),
-  maxSockets: Number(argv.maxSockets)
+  maxSockets: Number(argv.maxSockets),
+  timer: argv.timer
 };
 
 const runner = new Runner(runnerOptions);
